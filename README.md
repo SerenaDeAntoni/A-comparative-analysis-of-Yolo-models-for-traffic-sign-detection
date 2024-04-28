@@ -11,7 +11,7 @@ In this repository you will find an overview of the most important files and res
 ## Introduction 
 The objective of this project is to evaluate and compare three different models: YOLOv3, YOLOv5 and YOLOv8 with two traffic signs dataset. In particular we compare YOLOv3, YOLOv5n, YOLOv5m, YOLOv5x, YOLOv8n, YOLOv8m, YOLOv8x with a traffic sign dataset with and without data augmentation. 
 
-##Dataset
+## Dataset
 1. We select a dataset from kaggle that contains 741 labelled photos of roads with different traffic signs.
    -  https://www.kaggle.com/datasets/valentynsichkar/traffic-signs-dataset-in-yolo-format
 
