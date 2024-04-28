@@ -35,16 +35,16 @@ model = YOLO("yolov8m.pt") #modify the model name
 ```bash
 model.train(data="/content/drive/MyDrive/computervision/dataset/data.yaml", epochs = 5) #change the number of epochs
 ```
-NB: remeber to insert your onwn path to data.yaml file
-After train phase will appear a run folder in which where you will find saved all the metrics and the best and last model weigth (respectively best.pt and last.pt)
-7. For inference purposes, run the following command:
+NB: remeber to insert your onwn path to data.yaml file  
+After train phase will appear a run folder in which you will find saved all the metrics, the best and last model weigth (respectively best.pt and last.pt)
+7. For inference purposes, run the following commands:
 ```bash
 infer = YOLO("/content/drive/MyDrive/computervision/runs/detect/train/weights/best.pt")
 infer.predict("/content/drive/MyDrive/computervision/dataset/dataset/datasets/test/images", save = True , save_txt = True )
 ```
-NB: remeber to insert your onwn path to best.pt file in the first line and to the test directory in the second line
-8. For test and metrics calculation, run the following command:
-first you have to change the data.yaml file with the path to the test folder
+NB: remeber to insert your onwn path to best.pt file in the first line and to the images test directory in the second line
+8. For test and metrics calculation:  
+first you have to change the data.yaml file with the path to the test folder and then run the following commands:
 ```bash
 model_test = YOLO("/content/drive/MyDrive/computervision/runs/detect/train/weights/best.pt")
 results = model_test.val(data='/content/drive/MyDrive/computervision/dataset/data.yaml',conf=0.2,iou=0.5,split='test')
