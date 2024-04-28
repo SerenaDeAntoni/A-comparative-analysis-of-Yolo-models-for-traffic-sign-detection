@@ -26,27 +26,27 @@ The objective of this project is to evaluate and compare three different models:
 1. Clone the repo
 2. Open *.ipynb file
 3. Load the dataset
-4. modify data.yaml file with your folder's path
+4. modify data.yaml file with your train and validation folders' path
 5. To load the model
 ```bash
-model = YOLO("yolov3.pt") #modify the model name
+model = YOLO("yolov8m.pt") #modify the model name
 ```
 5. To perform training and validation, run the following command:
 ```bash
-model.train(data="/content/drive/MyDrive/computervision/dataset/data.yaml", epochs = 30) #change the number of epochs
+model.train(data="/content/drive/MyDrive/computervision/dataset/data.yaml", epochs = 5) #change the number of epochs
 ```
 NB: remeber to insert your onwn path to data.yaml file
 After train phase will appear a run folder in which where you will find saved all the metrics and the best and last model weigth (respectively best.pt and last.pt)
-6. For predict purposes, run the following command:
+6. For inference purposes, run the following command:
 ```bash
-infer = YOLO("/content/drive/MyDrive/computervision/runs/detect/v8_xl_aug/weights/best.pt")
+infer = YOLO("/content/drive/MyDrive/computervision/runs/detect/train/weights/best.pt")
 infer.predict("/content/drive/MyDrive/computervision/dataset/dataset/datasets/test/images", save = True , save_txt = True )
 ```
 NB: remeber to insert your onwn path to best.pt file in the first line and to the test directory in the second line
 7. For test and metrics calculation, run the following command:
 first you have to change the data.yaml file with the path to the test folder
 ```bash
-model_test = YOLO("/content/drive/MyDrive/computervision/runs/detect/v5_m_30epoche/weights/best.pt")
+model_test = YOLO("/content/drive/MyDrive/computervision/runs/detect/train/weights/best.pt")
 results = model_test.val(data='/content/drive/MyDrive/computervision/dataset/data.yaml',conf=0.2,iou=0.5,split='test')
 ```
 NB: remeber to insert your onwn path to best.pt file in the first line and to the data.yaml file in the second line
