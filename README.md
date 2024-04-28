@@ -51,5 +51,9 @@ results = model_test.val(data='/content/drive/MyDrive/computervision/dataset/dat
 ```
 NB: remeber to insert your onwn path to best.pt file in the first line and to the data.yaml file in the second line
 
+## Authors:
+@SerenaDeAntoni
+@Ghezzo98
+
 
 
